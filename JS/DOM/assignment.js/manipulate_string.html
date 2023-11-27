@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulate string</title>
+</head>
+<body>
+    <p id="capitalise"></p>
+    <script>
+        function logString(string){
+            document.getElementById('capitalise').innerText = string;
+        }
+
+        function manipulateString(string, callback){
+            let string1 = string.toUpperCase();
+            callback(string1);
+        }
+
+        let string = "hello world";
+
+        manipulateString(string, logString);
+    </script>
+</body>
+</html>

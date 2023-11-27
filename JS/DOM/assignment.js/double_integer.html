@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+</head>
+<body>
+    <p id="double"></p>
+    <script>
+        
+        function display(some){
+            document.getElementById('double').innerHTML = some;
+        }
+
+        function double(array, callback){
+            let arr = []
+            let val = array.forEach((item) => {
+                arr.push(item*2);
+            })
+            callback(arr)
+        }
+
+        let array1 = [10,30,32,3,42,4,5];
+        double(array1, display);
+    </script>
+</body>
+</html>
+

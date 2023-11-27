@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age in Days</title>
+</head>
+<body>
+    <p id="details"></p>
+    <script>
+        function logResult(name, age){
+            document.getElementById('details').innerText = `The person's full name is ${name} and their age is more than ${age} days.`
+        }
+
+        function ageInDays(personDetails, callback){
+            let fullName = personDetails.firstName +" " + personDetails.lastName;
+            let age_in_days = 365 * (personDetails.age);
+            callback(fullName, age_in_days);
+        }
+
+        let personDetails = {
+            firstName : "Arpit",
+            lastName : "Kabra",
+            age : 23,
+        }
+
+        ageInDays(personDetails, logResult)
+    </script>
+</body>
+</html>
