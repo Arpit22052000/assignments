@@ -1,0 +1,26 @@
+function fetchUrlUsingPromise() {
+  return new Promise((resolve, reject) => {
+    const data = fetch("https://jsonplaceholder.typicode.com/posts/1").then(
+      (response) => {
+        return response.json();
+      }
+    );
+    setTimeout(() => {
+      resolve(data);
+    }, 3000);
+  });
+}
+
+async function fetchUrl() {
+  try {
+    console.log("Fetching data....");
+    let result = await fetchUrlUsingPromise();
+    console.log("Data : ", result);
+  } catch (error) {
+    console.log("Error : ", error.message);
+  } finally {
+    console.log("The code executes using promise...");
+  }
+}
+
+fetchUrl();
